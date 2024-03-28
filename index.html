@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Employee Management</title>
+<style>
+    body {
+        background-image: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQA2AMBIgACEQEDEQH/xAAaAAADAQEBAQAAAAAAAAAAAAABAgMABAUH/8QAGxABAQEBAQADAAAAAAAAAAAAAAERAhIhMWH/xAAaAQEBAQEBAQEAAAAAAAAAAAACAQMABAUG/8QAGBEBAQEBAQAAAAAAAAAAAAAAAAERAhL/2gAMAwEAAhEDEQA/APp9hbFLAsfR18HEeoSxaxOw5QsRsJYvYnYcqYjYS8r2EsOUcQsJeV7yXycpRz3kt5XvIXkp005c/kLwv5C8l6b8ua8YXw6euS+SnT0cufy3lfyHnF9NeU5ybyecj5TW/JJyacnnI+U16OSTkfKk5HyOtoTyPmHkHymmleWV8s7XPesLVaSx87X5exKwlithbDlCxKwli1hbClHEbCWLWFvJypiN5C8rXktha7EbyW8r+QsLTkc95/A8r3kMXW3KF5LeHRYWxZXo5c/kPK95DC9N+Yj5HyrjeXem3Kfk05PhvPwmvRyScjh5y2JrWE8jIpjSJpp+RUxnar2AprArwvzNieBYpYGLKNiVhbFbC2FqYlhcVwMKVPKWBYpYWwtd5TsLYrYFi6c5SwLFMCwta8xOwtithbFlbyJYHk+Nha25hMbyfGx2tuYXBkNjSJrfkJBwZBxNawMbD42Jpkxj4ztc9ULDBXkfnbC0MNQVMJYWzFKWxYmEoGoUkwtLYcKrsJYWw4UmkiYHoVWvPJKSxSlKNZCYGGwKrTmA2CytuYAjg4jbkJDSNBc1gYODjIQAZkV6tLVMCx5NfAwhbFLyFi67ynQPYWwonklhVKWwk8koGCqvkmAehVOQlJT0lKNJChTUCaSFAwK0gY2CytY0YYyNYwtBRpGbBwcQgxhwXa562Nh/LY8Wvk+U7A8q2BjpXeUbC2L3kl5KVLwjYSxa8ksOVPKVhbFLCU4mFpaakpQpC0pqSlFkCgNKTSMDMpxmZnNIIgKNJWhghkOMaRsGIetjDGTXa9lhZ4Xz8LWEFcFJT0lKOwnSfSnSfRwcTpKfpPppBwnROjdVPqnHULSWtaW1pI6DpdDQ0sKG0NJrauHD6Ok1tTGkU02paaVLDlUhoSU0onpoaFn0MSlp4zRhdr2QDQ148eIaBbQtWRw2loWk66KRzdVO1uuk+q0kSt1UuqPXSfVaSDQ6qfVbrpPrppILdUloXolrSRNNoaTQ0sKU+tqetq4cqko6lKbXYcqkp5UZTyjYcqsp5UZTyhYeqyniUppRsXVYxZWFdetoal6D283l5FL0W9p3sl7Kcu1W9EvSd7JeynKap10n10S9EvTScjaPXSfVDrolpyI3XSfVbqktaSC1pNC0trSRw2l0LQ0sU2tpNbVwofTS/CUo6mHKrKeVKU0o2HKrKeVKU8oWHqsp5UZTyjYuqyiSVgxdd3qheqzMY8xL1S3qgxIW2lvVZjg0l6pb1QYkL1aS2sxxCdWltZjjidUjMcQtoazEoa2sykMo6zIcGWm2sw0oaWnlosNI0tPLWZnSNLWZkc//2Q==');
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 60px;
+        position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            object-fit: cover
+    }
+
+    .container {
+        max-width: 800px;
+        margin: auto;
+        background: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        background: transparent;
+        border-color: rgb(220, 124, 14);
+        border-radius: 60px;
+        text-decoration-color: rgb(233, 221, 151);
+        align-content: center;
+    }
+
+    h1 {
+        text-align: center;
+        text-decoration: underline;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+
+    input[type="text"],
+    input[type="number"],
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .employee-item {
+        border-bottom: 1px solid #ccc;
+        padding: 10px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .employee-item:last-child {
+        border-bottom: none;
+    }
+
+    .employee-details {
+        flex: 1;
+    }
+
+    .employee-actions {
+        flex-basis: 150px;
+        display: flex;
+        justify-content: space-between;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Employee Management System</h1>
+        <form id="employeeForm">
+            <label for="firstname">First Name:</label>
+            <input type="text" id="firstname" required><br>
+            <label for="lastname">Last Name:</label>
+            <input type="text" id="lastname" required><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" required><br>
+            <label for="gender">Gender:</label>
+            <select id="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select><br>
+            <label for="position">Position:</label>
+            <input type="text" id="position" required><br>
+            <button type="button" onclick="addEmployee()">Add Employee</button>
+        </form>
+
+        <div id="employeeList">
+            <!-- Employee list will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        let employees = [];
+
+        function addEmployee() {
+            const firstname = document.getElementById('firstname').value;
+            const lastname = document.getElementById('lastname').value;
+            const age = document.getElementById('age').value;
+            const gender = document.getElementById('gender').value;
+            const position = document.getElementById('position').value;
+
+            const employee = {
+                firstname: firstname,
+                lastname: lastname,
+                age: age,
+                gender: gender,
+                position: position
+            };
+
+            employees.push(employee);
+            displayEmployees();
+            clearForm();
+        }
+
+        function displayEmployees() {
+            const employeeList = document.getElementById('employeeList');
+            employeeList.innerHTML = '';
+
+            employees.forEach((employee, index) => {
+                const employeeItem = document.createElement('div');
+                employeeItem.classList.add('employee-item');
+                employeeItem.innerHTML = `
+                    <div class="employee-details">
+                        <p><strong>Name:</strong> ${employee.firstname} ${employee.lastname}</p>
+                        <p><strong>Age:</strong> ${employee.age}</p>
+                        <p><strong>Gender:</strong> ${employee.gender}</p>
+                        <p><strong>Position:</strong> ${employee.position}</p>
+                    </div>
+                    <div class="employee-actions">
+                        <button onclick="editEmployee(${index})">Edit</button>
+                        <button onclick="deleteEmployee(${index})">Delete</button>
+                    </div>
+                `;
+                employeeList.appendChild(employeeItem);
+            });
+        }
+
+        function editEmployee(index) {
+            const employee = employees[index];
+            document.getElementById('firstname').value = employee.firstname;
+            document.getElementById('lastname').value = employee.lastname;
+            document.getElementById('age').value = employee.age;
+            document.getElementById('gender').value = employee.gender;
+            document.getElementById('position').value = employee.position;
+
+            employees.splice(index, 1);
+            displayEmployees();
+        }
+
+        function deleteEmployee(index) {
+            employees.splice(index, 1);
+            displayEmployees();
+        }
+
+        function clearForm() {
+            document.getElementById('firstname').value = '';
+            document.getElementById('lastname').value = '';
+            document.getElementById('age').value = '';
+            document.getElementById('gender').value = 'male';
+            document.getElementById('position').value = '';
+        }
+
+        displayEmployees();
+    </script>
+</body>
+</html>
